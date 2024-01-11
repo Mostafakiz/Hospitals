@@ -22,4 +22,9 @@ return array(
     'delete' => 'Delete Doctor',
     'delete_doctor' => 'Delete Doctor',
     'edit_doctor' => 'Edit doctor data',
+    'change_password' => 'change password',
+    'new_password' => 'new password',
+    'confirm_password' => 'confirm password',
+    'update_status' => 'update status',
+    'choose_status' => 'choose status',
 );

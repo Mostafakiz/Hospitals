@@ -22,4 +22,9 @@ return array(
     'delete' => 'حذف الطبيب',
     'delete_select' => 'حذف مجموعة اطباء',
     'edit_doctor' => 'تعديل بيانات الطبيب',
+    'change_password' => 'تغير كلمة المرور',
+    'new_password' => 'كلمة المرور الجديدة',
+    'confirm_password' => 'تأكيد كلمة المرور',
+    'update_status' => 'تغير الحالة',
+    'choose_status' => 'اختر الحالة',
 );

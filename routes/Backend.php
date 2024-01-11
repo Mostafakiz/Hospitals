@@ -46,6 +46,8 @@ Route::group(
     
             // --------- Route Doctors ----------
             Route::resource('Doctors', DoctorController::class);
+            Route::post('update_password', [DoctorController::class, 'updatePassword'])->name('update_password');
+            Route::post('update_status', [DoctorController::class, 'updateStatus'])->name('update_status');
             // --------- End Route Doctors ---------- 
         });
 

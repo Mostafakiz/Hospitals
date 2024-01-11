@@ -15,4 +15,8 @@ interface DoctorRepositoryInterface
     public function edit($id);
     // Update Doctor
     public function update($request);
+    // Change password
+    public function updatePassword($request);
+    // Change status 
+    public function updateStatus($request);
 }

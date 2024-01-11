@@ -111,4 +111,30 @@ class DoctorRepository implements DoctorRepositoryInterface
             return redirect()->back()->withErrors(['error' => $exception->getMessage()]);
         }
     }
+    public function updatePassword($request)
+    {
+        try {
+            $doctor = Doctor::findOrfail($request->id);
+            $doctor->update([
+                'password' => Hash::make($request->password),
+            ]);
+            session()->flash('edit');
+            return redirect()->back();
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => $exception->getMessage()]);
+        }
+    }
+    public function updateStatus($request)
+    {
+        try {
+            $doctor = Doctor::findOrfail($request->id);
+            $doctor->update([
+                'status' => $request->status,
+            ]);
+            session()->flash('edit');
+            return redirect()->back();
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => $exception->getMessage()]);
+        }
+    }
 }
