@@ -17,10 +17,10 @@ class SectionController extends Controller
     {
         return $this->Sections->index();
     }
-    // public function show($id)
-    // {
-    //     return $this->Sections->show($id);
-    // }
+    public function show($id)
+    {
+        return $this->Sections->show($id);
+    }
     public function store(Request $request)
     {
         return $this->Sections->store($request);

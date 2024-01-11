@@ -11,4 +11,5 @@ return [
     'Close' => 'Close',
     'Warning' => 'Are Sure Of The Deleting Process ?',
     'description' => 'description',
+    'section_doctors' => 'section doctors',
 ];

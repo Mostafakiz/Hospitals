@@ -13,4 +13,8 @@ class Section extends Model
     protected $fillable = ['name', 'description'];
     // 3. To define which attributes needs to be translated
     public $translatedAttributes = ['name', 'description'];
+    public function doctors()
+    {
+        return $this->hasMany(Doctor::class);
+    }
 }
