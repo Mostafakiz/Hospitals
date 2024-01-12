@@ -104,7 +104,7 @@
                                     <option selected value="" selected disabled>--
                                         {{trans('Dashboard/Days.Make_appointments')}} --</option>
                                     @foreach($appointments as $appointment)
-                                    <option value="{{$appointment->name}}">{{$appointment->name}}</option>
+                                    <option value="{{$appointment->id}}">{{$appointment->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -38,6 +38,7 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctor->save();
             $doctor->name = $request->name;
             $doctor->save();
+            $doctor->doctorAppointments()->attach($request->appointments);
             $this->verifyAndStoreImage($request, 'photo', 'doctors', 'upload_image', $doctor->id, 'App\Models\Doctor');
             DB::commit();
             session()->flash('add');

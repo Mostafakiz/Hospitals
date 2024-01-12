@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DoctorController;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\SingleServiceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -27,28 +28,33 @@ Route::group(
     ],
     function () {
 
-        // --------- DashBoard User ----------
+        // ------------------ DashBoard User -------------------
     
         Route::get('/dashboard/user', function () {
             return view('Dashboard.User.dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard.user');
-        // --------- End DashBoard User ----------
+        // ------------------ End DashBoard User -------------------
     
-        // --------- DashBoard Admin ----------
+        // ------------------ DashBoard Admin -------------------
         Route::get('/dashboard/admin', function () {
             return view('Dashboard.Admin.dashboard');
         })->middleware(['auth:admin', 'verified'])->name('dashboard.admin');
-        // --------- End DashBoard User ----------
+        // ------------------ End DashBoard User -------------------
         Route::middleware(['auth:admin'])->group(function () {
-            // --------- Route Sections ----------
+            // ------------------ Route Sections -------------------
             Route::resource('Sections', SectionController::class);
-            // --------- End Route Sections ----------
+            // ------------------ End Route Sections -------------------
     
-            // --------- Route Doctors ----------
+            // ------------------ Route Doctors -------------------
             Route::resource('Doctors', DoctorController::class);
             Route::post('update_password', [DoctorController::class, 'updatePassword'])->name('update_password');
             Route::post('update_status', [DoctorController::class, 'updateStatus'])->name('update_status');
-            // --------- End Route Doctors ---------- 
+            // ------------------ End Route Doctors -------------------
+            // ------------------ Route Service -------------------
+            Route::resource('Service', SingleServiceController::class);
+            // ------------------ End Route Service -------------------
+    
+
         });
 
 
