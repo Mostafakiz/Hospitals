@@ -17,7 +17,7 @@ class SingleServiceRepository implements SingleServiceRepositoryInterface
             $SingleService = new Service();
             $SingleService->price = $request->price;
             $SingleService->description = $request->description;
-            $SingleService->status = $request->status;
+            $SingleService->status = 1;
             $SingleService->save();
             // Store Trans
             $SingleService->name = $request->name;
@@ -27,5 +27,28 @@ class SingleServiceRepository implements SingleServiceRepositoryInterface
         } catch (\Exception $exception) {
             return redirect()->back()->withErrors(['error' => $exception->getMessage()]);
         }
+    }
+    public function update($request)
+    {
+        try {
+            $SingleService = Service::findOrfail($request->id);
+            $SingleService->price = $request->price;
+            $SingleService->description = $request->description;
+            $SingleService->status = $request->status;
+            $SingleService->update();
+            // update Trans
+            $SingleService->name = $request->name;
+            $SingleService->update();
+            session()->flash('edit');
+            return redirect()->route('Service.index');
+        } catch (\Exception $exception) {
+            return redirect()->back()->withErrors(['error' => $exception->getMessage()]);
+        }
+    }
+    public function destroy($request)
+    {
+        Service::destroy($request->id);
+        session()->flash('delete');
+        return redirect()->route('Service.index');
     }
 }

@@ -60,6 +60,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$service->name}}</td>
                                 <td>{{$service->price}}</td>
+
                                 <td>
                                     <div class="dot-label bg-{{$service->status == 1 ? 'success':'danger'}} ml-1"></div>
                                     {{$service->status == 1 ?
@@ -76,7 +77,8 @@
                                 </td>
                             </tr>
 
-
+                            @include('Dashboard.Services.Single Service.edit')
+                            @include('Dashboard.Services.Single Service.delete')
                             @endforeach
                         </tbody>
                     </table>

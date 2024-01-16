@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSingleServiceRequest;
 use App\Interfaces\Services\SingleServiceRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -17,24 +18,16 @@ class SingleServiceController extends Controller
     {
         return $this->SingleService->index();
     }
-    public function store(Request $request)
+    public function store(StoreSingleServiceRequest $request)
     {
         return $this->SingleService->store($request);
     }
-    public function show(string $id)
+    public function update(Request $request)
     {
-        //
+        return $this->SingleService->update($request);
     }
-    public function edit(string $id)
+    public function destroy(Request $request)
     {
-        //
-    }
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-    public function destroy(string $id)
-    {
-        //
+        return $this->SingleService->destroy($request);
     }
 }

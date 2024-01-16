@@ -3,7 +3,7 @@
 return array(
     'Doctors' => 'Doctors',
     'View_all' => 'View All',
-    'Enabled' => 'Enabled',
+    'Enabled' => '  Enabled',
     'Not_enabled' => 'Not_enabled',
     'Processes' => 'Processes',
     'Status' => 'Status',
