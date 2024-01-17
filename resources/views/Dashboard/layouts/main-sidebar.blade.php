@@ -102,7 +102,7 @@
 							href="{{route('Service.index')}}">{{trans('Dashboard/main-sidebar-transe.Single_service')}}</a>
 					</li>
 					<li><a class="slide-item"
-							href="{{ url('/' . $page='darggablecards') }}">{{trans('Dashboard/main-sidebar-transe.group_services')}}</a>
+							href="{{route('Add_GroupServices')}}">{{trans('Dashboard/main-sidebar-transe.group_services')}}</a>
 					</li>
 					<li><a class="slide-item"
 							href="{{ url('/' . $page='contacts') }}">{{trans('Dashboard/main-sidebar-transe.Insurance')}}</a>

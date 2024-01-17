@@ -2,6 +2,7 @@
 <title> @yield('title') </title>
 
 @yield('css')
+@livewireStyles
 @if(App::getLocale()=='ar')
 <!-- Favicon -->
 <link rel="icon" href="{{URL::asset('Dashboard/img/brand/favicon.png')}}" type="image/x-icon" />
